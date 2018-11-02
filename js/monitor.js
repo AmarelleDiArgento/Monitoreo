@@ -1,17 +1,100 @@
+let postco =
+  [
+    {
+      "Nombre": "Arandanos",
+      "Fincas": ["Arandanos - Albania", "Arandanos - Cerrito A", "Arandanos - Cerrito B"]
+    },
+    {
+      "Nombre": "Carnations",
+      "Fincas": ["A. Carnations"]
+    },
+    {
+      "Nombre": "El Morado",
+      "Fincas": ["La Valentina", "Marly", "Marly 1", "Rt Ltda", "San Carlos", "San Mateo", "San Pedro"]
+    },
+    {
+      "Nombre": "El Rosal",
+      "Fincas": ["El Rosal"]
+    },
+    {
+      "Nombre": "Fantasy",
+      "Fincas": ["Fantasy 1", "Fantasy 2", "Fantasy 3", "Fantasy 6", "Fantasy 8"]
+    },
+    {
+      "Nombre": "Florex",
+      "Fincas": ["Florex"]
+    },
+    {
+      "Nombre": "Gerberas",
+      "Fincas": ["Elite - Gerberas"]
+    },
+    {
+      "Nombre": "Guacari",
+      "Fincas": ["Guacari"]
+    },
+    {
+      "Nombre": "Jardines De Colombia",
+      "Fincas": ["Jardines De Colombia"]
+    },
+    {
+      "Nombre": "Las Delicias",
+      "Fincas": ["Las Delicias"]
+    },
+    {
+      "Nombre": "Las Margaritas",
+      "Fincas": ["Circasia - Elite", "La Esmeralda", "Las Margaritas", "Santamaria"]
+    },
+    {
+      "Nombre": "Las Mercedes",
+      "Fincas": ["Mercedes"]
+    },
+    {
+      "Nombre": "Las Palmas",
+      "Fincas": ["A. Las Palmas"]
+    },
+    {
+      "Nombre": "Miramonte",
+      "Fincas": ["Miramonte 2", "Miramonte 3"]
+    },
+    {
+      "Nombre": "Normandia",
+      "Fincas": ["Normandia"]
+    },
+    {
+      "Nombre": "Rosas Colombianas",
+      "Fincas": ["Rosas Colombianas"]
+    },
+    {
+      "Nombre": "San Andres",
+      "Fincas": ["San Andres"]
+    },
+    {
+      "Nombre": "Valdaya",
+      "Fincas": ["Valdaya"]
+    },
+    {
+      "Nombre": "Valentinos",
+      "Fincas": ["Chusaca E.U.", "El Respiro", "Tikiya", "Tinzuque"]
+    },
+    {
+      "Nombre": "Vista",
+      "Fincas": ["Vista   -   Elite"]
+    }
+
+  ]
+
+
+
 window.addEventListener('load', () => {
   let online = window.navigator.onLine;
   console.log("Estado: " + online);
   estado(online);
-
-
-
-
+  console.log(postco);
 });
 
 
 function estado(stat) {
   var s = document.getElementById('status')
-  console.log(s.innerHTML);
   if (stat) {
     goOnline();
   } else {
@@ -30,6 +113,7 @@ function estado(stat) {
     s.innerHTML = "Offline";
   }
 }
+
 
 function agregar() {
 
@@ -62,9 +146,9 @@ function agregar() {
 }
 
 function archJson() {
-  var elem = document.getElementById('descargar');
+  let elem = document.getElementById('descargar');
 
   elem.download = "archivo.json";
   elem.href = "data:application/octet-stream," +
-    encodeURIComponent(contenidoDeArchivo);
+    encodeURIComponent(JSON.stringify(postco));
 }
