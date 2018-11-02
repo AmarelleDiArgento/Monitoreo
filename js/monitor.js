@@ -2,83 +2,103 @@ let postco =
   [
     {
       "Nombre": "Arandanos",
-      "Fincas": ["Arandanos - Albania", "Arandanos - Cerrito A", "Arandanos - Cerrito B"]
+      "Fincas": ["Arandanos - Albania", "Arandanos - Cerrito A", "Arandanos - Cerrito B"],
+      "Productos": ["Arandanos"]
     },
     {
       "Nombre": "Carnations",
-      "Fincas": ["A. Carnations"]
+      "Fincas": ["A. Carnations"],
+      "Productos": ["Rosas"]
     },
     {
       "Nombre": "El Morado",
-      "Fincas": ["La Valentina", "Marly", "Marly 1", "Rt Ltda", "San Carlos", "San Mateo", "San Pedro"]
+      "Fincas": ["La Valentina", "Marly", "Marly 1", "Rt Ltda", "San Carlos", "San Mateo", "San Pedro"],
+      "Productos": ["Rosas", "Alstroemerias"]
     },
     {
       "Nombre": "El Rosal",
-      "Fincas": ["El Rosal"]
+      "Fincas": ["El Rosal"],
+      "Productos": ["Rosas"]
     },
     {
       "Nombre": "Fantasy",
-      "Fincas": ["Fantasy 1", "Fantasy 2", "Fantasy 3", "Fantasy 6", "Fantasy 8"]
+      "Fincas": ["Fantasy 1", "Fantasy 2", "Fantasy 3", "Fantasy 6", "Fantasy 8"],
+      "Productos": ["Clavel", "Miniclavel", "Rosas"]
     },
     {
       "Nombre": "Florex",
-      "Fincas": ["Florex"]
+      "Fincas": ["Florex"],
+      "Productos": ["Pompon"]
     },
     {
       "Nombre": "Gerberas",
-      "Fincas": ["Elite - Gerberas"]
+      "Fincas": ["Elite - Gerberas"],
+      "Productos": ["Gerberas"]
     },
     {
       "Nombre": "Guacari",
-      "Fincas": ["Guacari"]
+      "Fincas": ["Guacari"],
+      "Productos": ["Rosas"]
     },
     {
       "Nombre": "Jardines De Colombia",
-      "Fincas": ["Jardines De Colombia"]
+      "Fincas": ["Jardines De Colombia"],
+      "Productos": ["Pompones"]
     },
     {
       "Nombre": "Las Delicias",
-      "Fincas": ["Las Delicias"]
+      "Fincas": ["Las Delicias"],
+      "Productos": ["Verdes"]
     },
     {
       "Nombre": "Las Margaritas",
-      "Fincas": ["Circasia - Elite", "La Esmeralda", "Las Margaritas", "Santamaria"]
+      "Fincas": ["Circasia - Elite", "La Esmeralda", "Las Margaritas", "Santamaria"],
+      "Productos": ["Alstroemerias", "Rosas"]
     },
     {
       "Nombre": "Las Mercedes",
-      "Fincas": ["Mercedes"]
+      "Fincas": ["Mercedes"],
+      "Productos": ["Clavel", "Miniclavel", "Rosas"]
     },
     {
       "Nombre": "Las Palmas",
-      "Fincas": ["A. Las Palmas"]
+      "Fincas": ["A. Las Palmas"],
+      "Productos": ["Alstroemerias", "Rosas"]
     },
     {
       "Nombre": "Miramonte",
-      "Fincas": ["Miramonte 2", "Miramonte 3"]
+      "Fincas": ["Miramonte 2", "Miramonte 3"],
+      "Productos": ["Pompon"]
     },
     {
       "Nombre": "Normandia",
-      "Fincas": ["Normandia"]
+      "Fincas": ["Normandia"],
+      "Productos": ["Rosas"]
     },
     {
       "Nombre": "Rosas Colombianas",
-      "Fincas": ["Rosas Colombianas"]
+      "Fincas": ["Rosas Colombianas"],
+      "Productos": ["Rosas"]
     },
     {
       "Nombre": "San Andres",
-      "Fincas": ["San Andres"]
+      "Fincas": ["San Andres"],
+      "Productos": ["Diver"]
     },
     {
       "Nombre": "Valdaya",
-      "Fincas": ["Valdaya"]
+      "Fincas": ["Valdaya"],
+      "Productos": ["Rosas"]
     },
     {
       "Nombre": "Valentinos",
-      "Fincas": ["Chusaca E.U.", "El Respiro", "Tikiya", "Tinzuque"]
+      "Fincas": ["Chusaca E.U.", "El Respiro", "Tikiya", "Tinzuque"],
+      "Productos": ["Clavel", "Miniclavel", "Rosas"]
     },
     {
       "Nombre": "Vista",
-      "Fincas": ["Vista   -   Elite"]
+      "Fincas": ["Vista   -   Elite"],
+      "Productos": ["Rosas"]
     }
 
   ]
@@ -111,9 +131,64 @@ function estado(stat) {
     s.classList.remove('online');
     s.classList.add('offline');
     s.innerHTML = "Offline";
+    Campos();
   }
 }
 
+function Campos() {
+  let cmp = document.querySelector('#Campos');
+  let Poscos = postco;
+  $('select').formSelect();
+  let SelPostcoA = `
+                <div class="row"> 
+                  <div id="postcosecha" class="input-field col s12 m6 l3 xl4">
+                    <select>
+                      <option value = "" class="undisable selected" > Postcosecha</option>`
+  let SelPostcoB = "";
+  for (let i = 0; i < Poscos.length; i++) {
+    SelPostcoB += `\n                      <option value="${i}"> ${Poscos[i].Nombre} </option>"`
+
+  }
+  let SelPostcoC = `
+                    </select>
+                  <label>Poscosecha</label>
+                </div>
+                <div id="finca" class="input-field col s12 m6 l3 xl4">
+                <select>
+                  <option value="" class="undisable selected">Finca</option>
+                  <option value="1"> Jardines </option>
+                  <option value="2"> Florex</option>
+                </select>
+                <label>Finca</label>
+              </div>
+                </div >
+                `
+  console.log(SelPostcoA + SelPostcoB + SelPostcoC);
+  cmp.innerHTML = "";
+  cmp.innerHTML = SelPostcoA + SelPostcoB + SelPostcoC;
+  cmp.innerHTML += `
+
+
+    <div class="row">
+      <div class="input-field col s3 m3 l3 x3">
+        <input type="text" id="bloque" class="" ><label for="bloque">Bloque</label>
+          <span class="helper-text" data-error="Bloque no existe" data-success="right"></span>
+          </div>
+        <div class="input-field col s3 m3 l3 x3">
+          <input type="number" id="cantidad" class="" ><label for="cantidad">Cantidad</label>
+            <span class="helper-text" data-error="Cantidad no existe" data-success="right"></span>
+          </div>
+          <div class="input-field col s3 m3 l3 x3">
+            <input type="number" id="cama" class="" ><label for="cama">Cama</label>
+              <span class="helper-text" data-error="Cama no existe" data-success="right"></span>
+          </div>
+            <div class="input-field col s3 m3 l3 x3">
+              <input type="number" id="linea" class=""><label for="linea">Linea</label>
+                <span class="helper-text" data-error="Linea no existe" data-success="right"></span>
+          </div>
+            </div>
+            `
+}
 
 function agregar() {
 

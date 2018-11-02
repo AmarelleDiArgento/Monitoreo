@@ -38,115 +38,80 @@
 
   <div class="container">
     <section>
-      <div id="status" > Status </div>
-      <form action="">
-        <div class="row">
-          <div class="input-field col s12 m6 l3 xl4">
+      <div id="status"> Status </div>
+      <div class="row">
 
-            <input type="text" id="fecha" class="datepicker" placeholder="Fecha">
-            <label for="fecha">Fecha</label>
-          </div>
-          <div id="tmonitoreo" class="input-field col s12 m6 l3 xl4">
-            <select>
-              <option value="" class="undisable selected">Tipo de monitoreo</option>
-              <option value="1"> Jardines </option>
-              <option value="2"> Florex</option>
-            </select>
-            <label>Tipo de monitoreo</label>
-
-          </div>
-          <div id="monitor" class="input-field col s12 m6 l3 xl4">
-            <select>
-              <option value="" class="undisable selected">Monitor</option>
-              <option value="1"> Jardines </option>
-              <option value="2"> Florex</option>
-            </select>
-            <label>Monitor</label>
-
-          </div>
-
+        <div class="input-field col s12 m6 l3 xl4">
+          <input type="text" id="fecha" class="datepicker" placeholder="Fecha">
+          <label for="fecha">Fecha</label>
         </div>
-        <div class="row">
-          <div id="postcosecha" class="input-field col s12 m6 l3 xl4">
-            <select>
-              <option value="" class="undisable selected">Postcosecha</option>
-              <option value="1"> Jardines </option>
-              <option value="2"> Florex</option>
-            </select>
-            <label>Poscosecha</label>
 
-          </div>
-          <div id="finca" class="input-field col s12 m6 l3 xl4">
-            <select>
-              <option value="" class="undisable selected">Finca</option>
-              <option value="1"> Jardines </option>
-              <option value="2"> Florex</option>
-            </select>
-            <label>Finca</label>
-
-          </div>
-
-
+        <div id="tmonitoreo" class="input-field col s12 m6 l3 xl4">
+          <select>
+            <option value="" class="undisable selected">Tipo de monitoreo</option>
+            <option value="1"> Jardines </option>
+            <option value="2"> Florex</option>
+          </select>
+          <label>Tipo de monitoreo</label>
         </div>
-        <div class="row">
-          <div class="input-field col s3 m3 l3 x3">
-            <input type="text" id="bloque" class="" placeholder="Bloque"><label for="bloque">Bloque</label>
-            <span class="helper-text" data-error="Bloque no existe" data-success="right"></span>
-          </div>
 
-          <div class="input-field col s3 m3 l3 x3">
-            <input type="number" id="cantidad" class="" placeholder="Cantidad"><label for="cantidad">Cantidad</label>
-            <span class="helper-text" data-error="Cantidad no existe" data-success="right"></span>
-          </div>
-
-          <div class="input-field col s3 m3 l3 x3">
-            <input type="number" id="cama" class="" placeholder="Cama"><label for="cama">Cama</label>
-            <span class="helper-text" data-error="Cama no existe" data-success="right"></span>
-          </div>
-
-          <div class="input-field col s3 m3 l3 x3">
-            <input type="number" id="linea" class="" placeholder="Linea"><label for="linea">Linea</label>
-            <span class="helper-text" data-error="Linea no existe" data-success="right"></span>
-          </div>
+        <div id="monitor" class="input-field col s12 m6 l3 xl4">
+          <select>
+            <option value="" class="undisable selected">Monitor</option>
+            <option value="1"> Jardines </option>
+            <option value="2"> Florex</option>
+          </select>
+          <label>Monitor</label>
         </div>
-      </form>
-      <div>
-        <table class="striped centered rc" id="tbl">
-          <thead>
 
-            <th id="ll1" class="coll1">Valor 1</th>
-            <th id="ll2" class="coll2">Valor 2</th>
-            <th id="ll3" class="coll3">Valor 3</th>
-            <th id="ll4" class="coll4">Valor 4</th>
-            <th></th>
-          </thead>
-          <tbody id="datos">
-
-            <tr>
-              <td>
-                <input type="text" name="" id="val1">
-              </td>
-              <td>
-                <input type="text" name="" id="val2">
-              </td>
-              <td>
-                <input type="text" name="" id="val3">
-              </td>
-              <td>
-                <input type="text" name="" id="val4">
-              </td>
-              <td>
-                <button type="button" class="material-icons" name="button" onclick="agregar()"> add </button>
-              </td>
-            </tr>
-
-          </tbody>
-
-        </table>
-
-
-        <button id="export">Exportar</button>
       </div>
+      <div class="row">
+        <div id="conSerial input-field col s12 m12 l12 xl12">
+          <input type="text" placeholder="Serial">
+        </div>
+      </div>
+
+      <div id="Campos">
+      </div>
+
+        <div class="row">
+        </div>
+        <div>
+          <table class="striped centered rc" id="tbl">
+            <thead>
+              <th id="ll1" class="coll1">Valor 1</th>
+              <th id="ll2" class="coll2">Valor 2</th>
+              <th id="ll3" class="coll3">Valor 3</th>
+              <th id="ll4" class="coll4">Valor 4</th>
+              <th></th>
+            </thead>
+            <tbody id="datos">
+
+              <tr>
+                <td>
+                  <input type="text" name="" id="val1">
+                </td>
+                <td>
+                  <input type="text" name="" id="val2">
+                </td>
+                <td>
+                  <input type="text" name="" id="val3">
+                </td>
+                <td>
+                  <input type="text" name="" id="val4">
+                </td>
+                <td>
+                  <button type="button" class="material-icons" name="button" onclick="agregar()"> add </button>
+                </td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+
+          <button id="export">Exportar</button>
+        </div>
 
     </section>
 
